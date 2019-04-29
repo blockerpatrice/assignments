@@ -1,0 +1,103 @@
+header {
+    position: relative;
+    background-color: black;
+    height: 80pt;
+    min-height: 25rem;
+    width: 100%;
+    overflow: hidden;
+    margin-bottom:50pt;
+  }
+  .footer{
+    border-top: 5px black solid;
+    padding-top: 30pt;
+    padding-bottom: 30pt;
+    line-height: 3pt;
+    margin: 10pt;
+    background-color: white;
+    text-align: center;
+    width:600pt;
+    margin:auto;
+}
+  
+  header video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 0;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+  }
+  
+  header .container {
+    position: relative;
+    z-index: 2;
+  }
+  
+  header .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.5;
+    z-index: 1;
+  }
+  .display-3 {
+      color:white;
+      font-size: 70pt;
+      font-family: 'Schoolbell', cursive;
+      
+  }
+  .lead{
+    color: white;
+    font-family: 'Schoolbell', cursive;
+    font-size:20pt;
+    margin:auto;
+  }
+  .text{
+    font-family: 'Schoolbell', cursive;
+    font-size:20pt;
+  }
+  .prices{
+    font-family: 'Schoolbell', cursive;
+    font-size:20pt;
+   
+  }
+  .images{  
+    height: 100px;
+    
+  }
+  .form{
+    width:500pt;
+  }
+  .aboutpic{
+    float:left;
+  }
+  .choices{
+    height:100px;
+  }
+  .img-responsive {
+    margin: 0 auto;
+  }
+
+  @media (pointer: coarse) and (hover: none) {
+    header {
+      background: url('https://gcs-vimeo.akamaized.net/exp=1556491809~acl=%2A%2F680707408.mp4%2A~hmac=0ec3aab52dccea74b032d881c3e79e2433593922a29347b2b970a6eb83f1afd5/vimeo-prod-skyfire-std-us/01/248/8/201243407/680707408.mp4') black no-repeat center center scroll;
+    }
+    header video {
+      display: none;
+    }
+  }
+@media(max-width: 767px){
+  .img{
+    display:block;
+    margin:auto;
+  }
+}

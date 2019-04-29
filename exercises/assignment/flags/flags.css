@@ -1,0 +1,273 @@
+*, *:before, *:after{
+    box-sizing: border-box; 
+}
+ html,body {
+    margin:0;
+    height:100%;
+} 
+.container{
+    height: 200pt;
+    margin: auto;
+    border: 1px black solid;
+    width: 300pt;
+    margin-bottom: 20pt;
+
+}
+.france1{
+    background-color: red;
+    position: relative;
+}
+
+.france2{
+    background-color: white;
+    width:100pt;
+    margin-left:100pt;
+    height:200pt;
+    position: absolute;
+    /*position overrides margin*/
+}
+
+.france3{
+    background-color: blue;
+    width:100pt;
+    height:200pt;
+    position: absolute;
+}
+
+
+.germany1{
+    background-color: black;
+    position: relative;
+}
+
+.germany2{
+    background-color: red;
+    height: 65pt;
+    width: 100%;
+    position: absolute;
+    margin-top: 65pt;
+}
+
+.germany3{
+    background-color: goldenrod;
+    height: 70pt;
+    width: 100%;
+    position: absolute;
+    margin-top: 130pt;
+}
+
+.madagascar1{
+    background-color: red;
+    width:200pt;
+    height:100pt;
+    margin-left:100pt;
+}
+.madagascar2{
+    background-color: green;
+    width:200pt;
+    height:100pt;
+    margin-left:100pt;
+}
+
+.swiss{
+    background-color: red;
+    position: relative;
+}
+.swiss1{
+    background-color: white;
+    width:50pt;
+    height:150pt;
+    position: absolute;
+    margin-left:125pt;
+    margin-top: 25pt;
+}
+.swiss2{
+    background-color: white;
+    width:150pt;
+    height:50pt;
+    position: absolute;
+    margin-top:75pt;
+    margin-left:75pt;
+}
+
+.sweden{
+    background-color: blue;
+    position: relative;
+}
+
+.sweden1{
+    background-color: goldenrod;
+    width:100%;
+    height: 50pt;
+    margin-top: 75pt;
+    position:absolute;
+}
+
+.sweden2{
+    background-color: goldenrod;
+    width:50pt;
+    height:100%;
+    margin-left:50pt;
+    position:absolute;
+}
+
+.gambia{
+    background-color:red;
+    width:300pt;
+    height:70pt;
+    position: absolute;
+}
+
+.gambia1{
+    background-color: blue;
+    width:300pt;
+    height:40pt;
+    position:absolute;
+    margin-top: 80pt;
+}
+
+.gambia2{
+    background-color:green;
+    width:300pt;
+    height:70pt;
+    position:absolute;
+    margin-top:130pt;
+}
+
+.tonga{
+    background-color:red;
+    position: relative;
+}
+
+.tonga1{
+    background-color: white;
+    height:100pt;
+    width:150pt;
+    position: absolute;
+}
+.tonga2{
+    background-color:red;
+    width:25pt;
+    height:70pt;
+    position: absolute;
+    margin-left:60pt;
+    margin-top:15pt;
+}
+.tonga3{
+    background-color:red;
+    width:70pt;
+    height:25pt;
+    position: absolute;
+    margin-top:40pt;
+    margin-left:39pt;
+}
+
+.japan{
+    height: 100pt;
+    width: 100pt;
+    background-color: red;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    margin-top:50pt;
+    margin-left:100pt;
+}
+
+
+.greece{
+    background-color:blue;
+    position:relative;
+}
+
+
+.greece2{
+    background-color:white;
+    height:23pt;
+    width:100%;
+    margin-top:23pt;
+}
+
+.greece3{
+    background-color: blue;
+    height:95pt;
+    width:150pt;
+    position: absolute;
+}
+.greece4{
+    background-color:white;
+    width:30pt;
+    height:115pt;
+    position: absolute;
+    margin-left:60pt;
+ 
+    
+}
+.greece5{
+    background-color:white;
+    width:150pt;
+    height:25pt;
+    position: absolute;
+    margin-top:45pt;
+
+}
+.niger{
+    background-color:darkorange;
+    position: relative;
+    height:65pt;
+    width:300pt;
+}
+.niger1{
+    background-color: darkorange;
+    border-radius: 50%;
+    height:70pt;
+    width:70pt;
+    margin-top:65pt;
+    margin-left:105pt;
+    position: absolute;
+}
+
+.niger2{
+    background-color:green;
+    position: absolute;
+    height:65pt;
+    width: 300pt;
+    margin-top:135pt;
+    
+}
+
+.maldives{
+    background-color:red;
+    position: relative;
+}
+
+.maldives1{
+    background-color:green;
+    height:100pt;
+    width:200pt;
+    position: absolute;
+    margin-left:50pt;
+    margin-top:50pt;
+}
+
+.maldives2{
+    height: 90pt;
+    width: 90pt;
+    background-color: white;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    margin-top:3pt;
+    margin-left:70pt;
+}
+
+
+.maldives3{
+    height: 90pt;
+    width: 90pt;
+    background-color: green;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    margin-top:3pt;
+    margin-left:80pt;
+}

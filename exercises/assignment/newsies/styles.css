@@ -1,0 +1,38 @@
+
+body{
+    background-color: lightyellow;
+}
+
+header{
+    text-align: center;
+    font-size: 70pt;
+    font-family: Optima;
+}
+
+.box-container{
+    background:lightyellow;
+    height: 100%;
+    width: 100%;
+}
+.box{
+    display: inline-block;
+    height: 100pt;
+}
+.one{
+    width: 25%;
+    float: left;
+}
+.two{
+    width: 25%;
+    float: left;
+}
+.three{
+    width: 50%;
+    float:left;
+}
+
+.middle{
+  height: auto;
+  width: 100%;
+}
+

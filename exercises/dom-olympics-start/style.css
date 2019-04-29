@@ -1,0 +1,81 @@
+#header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    font-size: 30pt;
+}
+
+#name {
+    color: peachpuff;
+    font-size: 15pt;
+    display: inline-block;
+}
+
+#name2{
+    color: black;
+    font-size: 15pt;
+    display: inline-block;
+}
+
+.messages {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    margin: 10px 0px;
+    padding: 20px;
+}
+
+#main {
+    margin: 30px;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.message {
+    padding: 5px;
+}
+
+#messageright {
+    align-self: flex-end;
+    background-color: lightblue;
+}
+
+#messageleft {
+    flex-direction: column;
+    align-self: flex-start;
+    background-color: burlywood;
+}
+
+#messageleft2 {
+    flex-direction: column;
+    align-self: flex-start;
+    background-color: burlywood;
+}
+
+#messageright2{
+    align-self: flex-end;
+    background-color: lightblue;
+}
+
+#messagerightblue{
+    align-self: flex-end;
+    background-color: blue;
+}
+
+#messagerightblue1{
+    align-self: flex-end;
+    background-color: blue;
+}
+
+#messageleftbrown{
+    flex-direction: column;
+    align-self: flex-start;
+    background-color: brown;
+}
+#messageleftbrown1{
+    flex-direction: column;
+    align-self: flex-start;
+    background-color: brown;
+}
+

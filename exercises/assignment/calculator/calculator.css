@@ -1,0 +1,23 @@
+*, *:before, *:after{
+    box-sizing: border-box; 
+}
+
+.box-container{
+    height: 220pt;
+    margin: auto;
+    width: 200pt;
+    margin-bottom: 20pt;
+    text-align: center;
+}
+.one{
+    background-color:plum;
+    border: 1px black solid;
+}
+.two{
+    background-color:greenyellow;
+    border: 1px black solid;
+}
+.three{
+    background-color: cyan;
+    border: 1px black solid;
+}

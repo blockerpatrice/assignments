@@ -1,0 +1,67 @@
+.box-container{
+    background: white;
+    height: 100%;
+    width: 100%;
+}
+
+.franceContainer{
+    height: 150pt;
+}
+.france1{
+    width:300pt;
+    height:150pt;
+    background:red;
+}
+.france2{
+    width:200pt;
+    height:150pt;
+    background: white;
+}
+
+.france3{
+/*within child*/
+    width:100pt;
+    height:150pt;
+    background: blue;
+}
+
+.germany1{
+    width: 300pt;
+    height: 150pt;
+    background: goldenrod;
+}
+
+.germany2{
+    width:300pt;
+    height:100pt;
+    background: red;
+}
+.germany3{
+    width:300pt;
+    height:50pt;
+    background:black;
+}
+
+.madagascar1{
+    width:300pt;
+    height:75pt;
+    background:red;
+}
+
+.madagascar2{
+    height:150pt;
+    width:120pt;
+    background:white;
+}
+
+.madagascar3{
+    height:150pt;
+    width:300pt;
+    background:green;
+}
+
+.swiss{
+    height:150pt;
+    width:150pt;
+    background: red;
+}

@@ -1,0 +1,71 @@
+*{
+    box-sizing: border-box; 
+    font-size: 0px;
+    border-style: solid;
+    border-width: 5px;
+    border-color: white;
+}
+
+.box-container{
+    background: white;
+    height: 500pt;
+    width: 600pt;
+}
+
+.box{
+    display: inline-block;
+    background: tomato;
+    height: 100pt;
+}
+
+.one{
+    background:#F5C6D6;
+    width: 100%;
+}
+.two{
+    background: #EE2E84;
+    width: 25%
+}
+.three{
+    background:#85CFD8;
+    width: 50%
+    
+}
+.four{
+    background:#8DC63F;
+    width: 75%;
+}
+
+.five{
+    background:#E76E34;
+    width:25%;
+}
+
+@media (max-width: 768pt){
+    .one{
+        height:50pt;
+
+    }
+    .two{
+        height:50pt;
+        width:100%;
+    }
+    .three{
+        height:50pt;
+        width: 100%;
+    }
+    .four{
+        height:50pt;
+        width: 100%;
+    }
+    .five{
+        height:50pt;
+        width:100%;
+    }
+    
+}
+/*
+Use percentages for more flexible 
+
+
+*/

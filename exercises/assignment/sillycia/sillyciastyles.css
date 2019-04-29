@@ -1,0 +1,28 @@
+body {
+    background-color:lightgray;  
+}
+
+h1{
+    color: darkgreen;
+    font-family: Georgia;
+    text-align:center;
+}
+h2{
+    font-family:Georgia;
+    text-align:center;
+}
+p{
+    line-height: 25pt;
+}
+ul{
+    padding: 
+}
+img{
+    float: left;
+    border-style: solid;
+    border-right-width: 15pt;
+    border-color: lightgray;
+
+}
+/*
+display:inline-block*/
