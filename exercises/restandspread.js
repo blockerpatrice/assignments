@@ -39,46 +39,26 @@ function returnFavorites(){
 //returnFavorites();
 
 function combineAnimals(...animals) {  
-    const array = [...animals];
-    console.log(array.push(animals));
+    const array = [];
+    for(let i=0;i<animals.length; i++){
+        array.push(animals[i]);
+    }
+    console.log(array);
 }
 
 const realAnimals = ["dog", "cat", "mouse"];
 const magicalAnimals = ["jackolope"];
 const mysteriousAnimals = ["platypus"];
 
-combineAnimals(realAnimals, magicalAnimals, mysteriousAnimals); 
+// combineAnimals(realAnimals, magicalAnimals, mysteriousAnimals); 
 
+const numbers = [a,b,c,d,e];
+function product(a, b, c, d, e) {  
 
-let numbers = ['a','b','c','d','e'];
-const product = (numbers) => {  
-    return numbers.reduce(
-      (acc, number) => {
+    return numbers.reduce(function(acc, number) {
       return acc * number;
-    }, 1)
-}
-product(numbers);
-
-const unshift = (array, ...a) => {  
-    return [...a].concat(array);
-}
-
-
-const users = [
-    {firstName: "Frank", lastName: "Peterson"},
-    {firstName: "Suzy", lastName: "Degual"},
-    {firstName: "Liza", lastName: "Jones"},
-];
-
-const populatePeople = (...names) => {
-    return names.map(function(name){
-        name = name.split(" ");
-        // your code
-        return {
-            firstName: firstName,
-            lastName: lastName
-        }
     }
-};
+}
+const myFunc = produc => {
 
-populatePeople();
+}

@@ -14,4 +14,5 @@ function sayHelloAge(age){
     console.log("Hello, how do you like being "+ age + " ? ");
 }
 
-sayHelloAge(16);
+// sayHelloAge(16);
+
