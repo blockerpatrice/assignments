@@ -1,0 +1,7 @@
+{
+    "appetizers": [{"egg rolls":["cabbage, pork","delicious egg rolls"], "sliders":["hamburger, bun, cheese","tasty sliders"], "mac and cheese bites":["macaroni, cheese","mac and cheese bites with red sauce"]}],
+    "cold sandwiches": [{"turkey":["fresh bread, turkey, lettuce, cheese, mayo"], "ham and cheese":[""], "bologna"}],
+    "hot sandwiches": ["grilled cheese", "cuban"],
+    "desserts":["apple pie","cheesecake"],
+    "drinks":["orange juice","apple juice","water"]
+}

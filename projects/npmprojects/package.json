@@ -10,6 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "ascii-art": "^1.5.1",
+    "figlet": "^1.2.1",
     "readline-sync": "^1.4.9"
   }
 }

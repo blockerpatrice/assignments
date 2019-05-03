@@ -1,5 +1,5 @@
 let vals = [1,2,3];
-let sum = vals.reduce((acc,val) => acc + val);
+let sum = vals.reduce((x,y) => x + y);
 console.log(sum); // 6
 
 function stringConcat(arr) {
@@ -9,13 +9,13 @@ function stringConcat(arr) {
 console.log(stringConcat([1,2,3])); // "123"
 
 function totalVotes(arr) {
-    let counter = 0;
-    let numOfVoters = arr.reduce((acc,arr) => {
-       if(arr.voted === true){
-           counter++;
-       }
+    //let counter = 0;
+    return arr.reduce((acc,voter) => {
+       if(voter.voted){
+           return acc += 1;
+       } else 
+            return acc;
  },0);
- return counter;
 }
  
 const voters = [
@@ -48,7 +48,7 @@ const voters = [
      { title: "A second Tesla Model S", price: 90000 }
  ];
  
- console.log(shoppingSpree(wishlist)); // 227005
+//console.log(shoppingSpree(wishlist)); // 227005
 
 
 function flatten(arr) {
@@ -78,16 +78,6 @@ const voters2 = [
     {name: 'Zack', age: 19, voted: false}
 ];
 
-
-function totalVotes(arr) {
-    let counter = 0;
-    let numOfVoters = arr.reduce((acc,arr) => {
-       if(arr.voted === true){
-           counter++;
-       }
- },0);
- return counter;
-}
  
 function voterResults(arr) {
    const result = [];
