@@ -2,6 +2,7 @@ const ask = require("readline-sync");
 console.log("Welcome to Survival ");
 let player = ask.question("Please enter name ");
 let island = ask.questionInt("Please enter time. 1 for Ice Age, 2 for Alien Occupied Earth ",{limit:3});
+let figlet = require('figlet');
 
 let me; // variable for player
 
@@ -15,39 +16,10 @@ if(island === 1){
         this.isAlive = true;
         this.hasWon = false;
         this.spear = function(){
-            let spear = require('figlet');
-            spear.text('Spear used', {
-                font: 'Ghoulish',
-                horizontalLayout: 'default',
-                verticalLayout: 'default'
-            }, function(err, data) {
-                if (err) {
-                    console.log('Something went wrong...');
-                    console.dir(err);
-                    return;
-                }
-                console.log(data);
-            });
-
-            let damage = Math.floor(Math.random() * 20);
-            return (`Damage delt from spear: ${damage}`);
+            return Math.floor(Math.random() * 20);
         }
         this.bowAndArrow = function(){
-            let bow = require('figlet');
-            bow.text('Bow and arrow shot', {
-                font: 'Double',
-                horizontalLayout: 'default',
-                verticalLayout: 'default'
-            }, function(err, data) {
-                if (err) {
-                    console.log('Something went wrong...');
-                    console.dir(err);
-                    return;
-                }
-                console.log(data);
-            });
-            let damage = Math.floor(Math.random() * 60);
-            return (`Damage delt from bow and arrow: ${damage}`);
+            return Math.floor(Math.random() * 60);
         }
 
         this.makeFire = function(){
@@ -96,47 +68,19 @@ if(island === 1){
     this.hasWon = false;
 
     this.shootFireArm = function(){
-        let fireArm = require('figlet');
-        fireArm.text('FireArm Shot', {
-            font: 'Isometric1',
-            horizontalLayout: 'default',
-            verticalLayout: 'default'
-        }, function(err, data) {
-            if (err) {
-                console.log('Something went wrong...');
-                console.dir(err);
-                return;
-            }
-            console.log(data);
-        });
-        let damage= Math.floor(Math.random() * 300) + 5;
-        return(`Damage delt from firearm ${damage}`);
+       return Math.floor(Math.random() * 300) + 5;
     }
        
     
     this.useNuke = function(){
-        let nuke = require('figlet');
-        nuke.text('Nuke used', {
-            font: 'Isometric1',
-            horizontalLayout: 'default',
-            verticalLayout: 'default'
-        }, function(err, data) {
-            if (err) {
-                console.log('Something went wrong...');
-                console.dir(err);
-                return;
-            }
-            console.log(data);
-        });
-        let damage= Math.floor(Math.random() * 300) + 5;
-        return(`Damage delt from firearm ${damage}`);
+        return Math.floor(Math.random() * 300) + 5;
     }
  }
 }
 
 function wollyMammoth(){
     this.name = "Wolly Mammoth";
-    this.health = 200;
+    this.health = 100;
     this.location = "North";
     this.time = "Ice Age";
     this.isAlive = true;
@@ -154,7 +98,7 @@ function saberToothedTiger(){
     this.isAlive = true;
     this.hasWon = false;
     this.attack = function(){
-        return Math.floor(Math.random() * 200);
+        return Math.floor(Math.random() * 100);
     }
 
 }
@@ -178,7 +122,7 @@ function packRats(){
     this.time = "Ice Age"
     this.isAlive = true;
     this.hasWon = false;
-    this.attackBite = function(){
+    this.attack = function(){
         return Math.floor(Math.random() * 30);
     }
 }
@@ -246,7 +190,7 @@ const northEnemiesAlien = [alienAndro, alienVirgo];
 const southEnemiesAlien =[human,robot];
 
 
-while(!me.hasWon && me.isAlive && island === 1){
+while(island === 1 && !me.hasWon && me.isAlive){
     let action = ask.keyIn("To walk north, press n to walk south press s. To view inventory press i. To quit, press q ", {limit:"nsiq"});
 
     if(action === "n"){
@@ -260,146 +204,222 @@ while(!me.hasWon && me.isAlive && island === 1){
     }
 }
 
+while(island === 2 && !me.hasWon && me.isAlive ){
+    let action = ask.keyIn("To walk north, press n to walk south press s. To view inventory press i. To quit, press q ", {limit:"nsiq"});
+
+    if(action === "n"){
+      walkNorthAliens();
+    }else if (action === "s"){
+        walkSouthAliens();
+    }else if (action === "i"){
+        printInventoryIceAge();
+    }else if (action === "q"){
+        process.exit();
+    }
+}
+
+
 function walkNorthIceAge(){
     let random = Math.floor(Math.random()*4)+1;
-    
     if (random < 4){
-        let walkNorth = require('figlet');
-        walkNorth.text('You walked north', {
-            font: 'Ghoulish',
-            horizontalLayout: 'default',
-            verticalLayout: 'default'
-        }, function(data) {
-            console.log(data);
-        });
-
-    } else {
+        console.log("You walked North in the Ice Age");
+    }else{
         northIceAgeEnemyEncounter();
     }
 }
 
+
 function walkSouthIceAge(){
     let random = Math.floor(Math.random()*4)+1;
     if (random < 4){
-        let walkSouth = require('figlet');
-        walkSouth.text('You walked south', {
-            font: 'Ghoulish',
-            horizontalLayout: 'default',
-            verticalLayout: 'default'
-        }, function(data) {
-            console.log(data);
-        });
-
+        console.log("You walked South in the Ice Age");
     } else {
         southIceAgeEnemyEncounter();
     }
 }
 
+function walkNorthAliens(){
+    let random = Math.floor(Math.random()*4)+1;
+    if (random < 4){
+        console.log("You walked North in Alien territory");
+    }else{
+        northAlienEnemyEncounter();
+    }
+}
+
+
+function walkSouthAliens(){
+    let random = Math.floor(Math.random()*4)+1;
+    if (random < 4){
+        console.log("You walked South in Alien territory");
+    } else {
+        southAlienEnemyEncounter();
+    }
+}
+
+
 function northIceAgeEnemyEncounter(){
     let enemy = northEnemiesIce[Math.floor(Math.random() * northEnemiesIce.length)];
     let action = ask.keyIn(`You encountered ${enemy.name}, would you like to run (r) or fight (f)?`);
     if(action === "r"){
-        run(enemy);
-    }else {
-        while(enemy.health > 0 && me.health > 0){
-            fight(enemy);
+        runIce(enemy);
+    }else if(action === "f"){
+        while(enemy.health > 0 || me.health > 0){
+            fightIce(enemy);
         }
     }
-
 }
 
 function southIceAgeEnemyEncounter(){
     let enemy = southEnemiesIce[Math.floor(Math.random() * northEnemiesIce.length)];
     let action = ask.keyIn(`You encountered ${enemy.name}, would you like to run (r) or fight (f)?`);
     if(action === "r"){
-        run();
+        runIce();
     }else {
         while(enemy.health > 0 && me.health > 0){
-            fight(enemy);
+            fightIce(enemy);
         }
     }
 }
+
+function northAlienEnemyEncounter(){
+    let enemy = northEnemiesAlien[Math.floor(Math.random() * northEnemiesIce.length)];
+    let action = ask.keyIn(`You encountered ${enemy.name} aliens, would you like to run (r) or fight (f)?`);
+    if(action === "r"){
+        runAlien(enemy);
+    }else if(action === "f"){
+        while(enemy.health > 0 || me.health > 0){
+            fightAlien(enemy);
+        }
+    }
+}
+
+function southAlienEnemyEncounter(){
+    let enemy = southEnemiesAlien[Math.floor(Math.random() * northEnemiesIce.length)];
+    let action = ask.keyIn(`You encountered ${enemy.name} aliens, would you like to run (r) or fight (f)?`);
+    if(action === "r"){
+        runAlien(enemy);
+    }else if(action === "f"){
+        while(enemy.health > 0 || me.health > 0){
+            fightAlien(enemy);
+        }
+    }
+}
+
 
 function printInventoryIceAge(){
     console.log(`Your inventory is ${me.inventory}`);
 }
 
-function run(enemy){
+function runIce(enemy){
     let random = Math.floor(Math.random()*2)+1;
 
     if (random === 1){
-        let ranAway = require('figlet');
-        ranAway.text('You Ran Away', {
-            font: 'Isometric1',
-            horizontalLayout: 'default',
-            verticalLayout: 'default'
-        }, function(err, data) {
-            if (err) {
-                console.log('Something went wrong...');
-                console.dir(err);
-                return;
-            }
-            console.log(data);
-        });
+        console.log(`You got away from the ${enemy.name}`);
+        
     } else if (random === 2){
-        let fighting = require('figlet');
-        fighting.text('You did not get away, you have to fight', {
-            font: 'Isometric1',
-            horizontalLayout: 'default',
-            verticalLayout: 'default'
-        }, function(err, data) {
-            if (err) {
-                console.log('Something went wrong...');
-                console.dir(err);
-                return;
-            }
-            console.log(data);
-        });
-        fight(enemy);
+       console.log(`You did not get away, you now have to fight the ${enemy.name}`);
+       fightIce(enemy);
     }
-
 }
-function fight(enemy){
+
+function runAlien(enemy){
+    let random = Math.floor(Math.random()*2)+1;
+
+    if (random === 1){
+        console.log(`You got away from the ${enemy.name}`);
+        
+    } else if (random === 2){
+       console.log(`You did not get away, you now have to fight the ${enemy.name}`);
+       fightAlien(enemy);
+    }
+}
+
+function fightIce(enemy){
     let random = Math.floor(Math.random()*5);
+    let weapon = ask.keyIn("Which weapon would you like to use? Use S for spear, B for bow and arrow ", {limit:"sb"});
 
-    if(island === 1 ){
-        let weapon = ask.keyIn("Which weapon would you like to use? Use S for spear, B for bow and arrow ", {limit:"sb"});
-        if(random === 1){
-            console.log("You missed");
-        }else{
-            if(weapon === "b"){
+    if(random === 1){
+        console.log("You missed");
+    }else{
+        if(weapon === "b"){
 
-                console.log(me.health);
+            enemy.health -= me.bowAndArrow();
+            me.health -= enemy.attack();
 
-                enemy.health -= me.bowAndArrow();
-                me.health -= enemy.attack();
+            if(me.health < 0 || isNaN(me.health)){
+                console.log(`${me.name} died`);
+                process.exit();
+            } else if (isNaN(enemy.health) && me.health > 0 || enemy.health < 0){
+                let itemreward = me.inventory[Math.floor(Math.random() * me.inventory.length)];
+                me.health += 10;
+                me.inventory.push(itemreward);
+                console.log(`${me.name} hit ${enemy.name}. \n${me.name}'s health is now ${me.health} \nThe ${enemy.name} died. You have earned 10 health and were rewarded ${itemreward}. Your health is now ${me.health} your inventory is ${me.inventory}`);
 
-                console.log(`${enemy.name} hit ${me.name}. \n ${me.name}'s health is now ${me.health} \n ${enemy.name}'s health is now ${enemy.health}`);
-                if(me.health < 0){
-                    let death = require('figlet');
-                    death.text('You Died', {
-                    font: 'Isometric1',
-                    horizontalLayout: 'default',
-                    verticalLayout: 'default'
-                    }, function(err, data) {
-                        if (err) {
-                            console.log('Something went wrong...');
-                            console.dir(err);
-                            return;
-                        }
-                        console.log(data);
-                    });
-                    me.isAlive === false;
-                } else {
-                    console.log(`${enemy.name} hit ${me.name}. \n ${me.name}'s health is now ${me.health} \n ${enemy.name}'s health is now ${enemy.health}`);
-                }
-            } else if(weapon == "s"){
-                me.health -= me.spear();
-                enemy.health -= enemy.attack();
+            } else{
+                console.log(`${me.name} hit ${enemy.name}. \n${me.name}'s health is now ${me.health} \nThe ${enemy.name} health is ${enemy.health}`);
             }
-           
-            
-        }
-    }
+        } else if(weapon === "s"){
+            enemy.health -= me.spear();
+            me.health -= enemy.attack();
 
+            if(me.health < 0 || isNaN(me.health)){
+                console.log(`${me.name} died`);
+                process.exit();
+            } else if (isNaN(enemy.health) && me.health > 0 || enemy.health < 0){
+                let itemreward = me.inventory[Math.floor(Math.random() * me.inventory.length)];
+                console.log(`${me.name} hit ${enemy.name}. \n${me.name}'s health is now ${me.health} \nThe ${enemy.name} died. You have earned 10 health and were rewarded ${itemreward}. Your health is now ${me.health} your inventory is ${me.inventory}`);
+                me.health += 10;
+                me.inventory.push(itemreward);
+            }
+            else{
+                console.log(`${me.name} hit ${enemy.name}. \n${me.name}'s health is now ${me.health} \nThe ${enemy.name} health is ${enemy.health}`);
+            }
+        }
+          
+    }
+}      
+            
+function fightAlien(enemy){
+    let random = Math.floor(Math.random()*5);
+    let weapon = ask.keyIn("Which weapon would you like to use? Use N for nuke, F for firearm ", {limit:"nf"});
+    if(random === 1){
+        console.log("You missed");
+    }else{
+        if(weapon === "n"){
+
+            enemy.health -= me.useNuke();
+            me.health -= enemy.attack();
+
+            if(me.health < 0 || isNaN(me.health)){
+                console.log(`${me.name} died`);
+                process.exit();
+            } else if (isNaN(enemy.health) && me.health > 0 || enemy.health < 0){
+                let itemreward = me.inventory[Math.floor(Math.random() * me.inventory.length)];
+                me.health += 10;
+                me.inventory.push(itemreward);
+                console.log(`${me.name} hit ${enemy.name}. \n${me.name}'s health is now ${me.health} \nThe ${enemy.name} died. You have earned 10 health and were rewarded ${itemreward}. Your health is now ${me.health} your inventory is ${me.inventory}`);
+            } else{
+                console.log(`${me.name} hit ${enemy.name}. \n${me.name}'s health is now ${me.health} \nThe ${enemy.name} health is ${enemy.health}`);
+            }
+        } else if(weapon == "f"){
+            enemy.health -= me.shootFireArm();
+            me.health -= enemy.attack();
+
+            if(me.health < 0 || isNaN(me.health)){
+                console.log(`${me.name} died`);
+                process.exit();
+            } else if (isNaN(enemy.health) && me.health > 0 || enemy.health < 0){
+                let itemreward = me.inventory[Math.floor(Math.random() * me.inventory.length)];
+                me.health += 10;
+                me.inventory.push(itemreward);
+                console.log(`${me.name} hit ${enemy.name}. \n${me.name}'s health is now ${me.health} \nThe ${enemy.name} died. You have earned 10 health and were rewarded ${itemreward}. Your health is now ${me.health} your inventory is ${me.iventory}`);
+            }else{
+                console.log(`${me.name} hit ${enemy.name}. \n${me.name}'s health is now ${me.health} \nThe ${enemy.name} health is ${enemy.health}`);
+            }
+        }
+          
+    }
 }
+
+
