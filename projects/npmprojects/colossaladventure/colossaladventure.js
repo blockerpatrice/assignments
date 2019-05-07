@@ -352,9 +352,8 @@ function fightIce(enemy){
                 process.exit();
             } else if (isNaN(enemy.health) && me.health > 0 || enemy.health < 0){
                 let itemreward = me.inventory[Math.floor(Math.random() * me.inventory.length)];
-                me.health += 10;
                 me.inventory.push(itemreward);
-                console.log(`${me.name} hit ${enemy.name}. \n${me.name}'s health is now ${me.health} \nThe ${enemy.name} died. You have earned 10 health and were rewarded ${itemreward}. Your health is now ${me.health} your inventory is ${me.inventory}`);
+                console.log(`${me.name} hit ${enemy.name}. \n${me.name}'s health is now ${me.health} \nThe ${enemy.name} died. You were rewarded ${itemreward}. Your inventory is ${me.inventory}`);
 
             } else{
                 console.log(`${me.name} hit ${enemy.name}. \n${me.name}'s health is now ${me.health} \nThe ${enemy.name} health is ${enemy.health}`);
@@ -368,9 +367,9 @@ function fightIce(enemy){
                 process.exit();
             } else if (isNaN(enemy.health) && me.health > 0 || enemy.health < 0){
                 let itemreward = me.inventory[Math.floor(Math.random() * me.inventory.length)];
-                console.log(`${me.name} hit ${enemy.name}. \n${me.name}'s health is now ${me.health} \nThe ${enemy.name} died. You have earned 10 health and were rewarded ${itemreward}. Your health is now ${me.health} your inventory is ${me.inventory}`);
-                me.health += 10;
                 me.inventory.push(itemreward);
+                console.log(`${me.name} hit ${enemy.name}. \n${me.name}'s health is now ${me.health} \nThe ${enemy.name} died. You were rewarded ${itemreward}. Your inventory is ${me.inventory}`);
+                
             }
             else{
                 console.log(`${me.name} hit ${enemy.name}. \n${me.name}'s health is now ${me.health} \nThe ${enemy.name} health is ${enemy.health}`);
@@ -396,9 +395,8 @@ function fightAlien(enemy){
                 process.exit();
             } else if (isNaN(enemy.health) && me.health > 0 || enemy.health < 0){
                 let itemreward = me.inventory[Math.floor(Math.random() * me.inventory.length)];
-                me.health += 10;
                 me.inventory.push(itemreward);
-                console.log(`${me.name} hit ${enemy.name}. \n${me.name}'s health is now ${me.health} \nThe ${enemy.name} died. You have earned 10 health and were rewarded ${itemreward}. Your health is now ${me.health} your inventory is ${me.inventory}`);
+                console.log(`${me.name} hit ${enemy.name}. \n${me.name}'s health is now ${me.health} \nThe ${enemy.name} died. You were rewarded ${itemreward}. Your inventory is ${me.inventory}`);
             } else{
                 console.log(`${me.name} hit ${enemy.name}. \n${me.name}'s health is now ${me.health} \nThe ${enemy.name} health is ${enemy.health}`);
             }
@@ -411,9 +409,8 @@ function fightAlien(enemy){
                 process.exit();
             } else if (isNaN(enemy.health) && me.health > 0 || enemy.health < 0){
                 let itemreward = me.inventory[Math.floor(Math.random() * me.inventory.length)];
-                me.health += 10;
                 me.inventory.push(itemreward);
-                console.log(`${me.name} hit ${enemy.name}. \n${me.name}'s health is now ${me.health} \nThe ${enemy.name} died. You have earned 10 health and were rewarded ${itemreward}. Your health is now ${me.health} your inventory is ${me.iventory}`);
+                console.log(`${me.name} hit ${enemy.name}. \n${me.name}'s health is now ${me.health} \nThe ${enemy.name} died. You were rewarded ${itemreward}. Your inventory is ${me.iventory}`);
             }else{
                 console.log(`${me.name} hit ${enemy.name}. \n${me.name}'s health is now ${me.health} \nThe ${enemy.name} health is ${enemy.health}`);
             }
