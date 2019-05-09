@@ -5,6 +5,7 @@ axios.get("https://api.vschool.io/patriceblocker/todo/").then((response)=>{
 })
 
 function displayTodo(todos){
+
     todos.forEach(todo =>{
         let parentDiv = document.createElement("div");
         let titleH3 = document.createElement("h3");
@@ -15,6 +16,9 @@ function displayTodo(todos){
         //label for checkbox
         let label = document.createElement("label"); 
 
+        //label for delete
+        let deleteButton = document.createElement("label");
+
         //set values equal to todo.info from api
         titleH3.innerText = todo.title;
         description.innerText = todo.description;
@@ -23,13 +27,27 @@ function displayTodo(todos){
         //checkbox
         checkbox.setAttribute("type","checkbox");
 
+        //delete button
+        deleteButton.setAttribute("type","button");
+
         checkbox.addEventListener("click", function(){
-            axios.put(`https://api.vschool.io/patriceblocker/todo/${todo._id}`, {completed: !todo.completed});
-            
+            axios.put(`https://api.vschool.io/patriceblocker/todo/${todo._id}`, {completed: !todo.completed}).then(
+                (response) => {
+                    const updatedTodos = todoList.map(oldTodo => oldTodo._id === todo._id ? oldTodo = response.data : oldTodo); 
+                    displayTodo(updatedTodos);
+                    titleH3.style.textDecoration = "line-though";   
+                    window.location.reload();
+                
+                });
+
             titleH3.style.textDecoration = "line-though";   
             todo.completed ? titleH3.style.textDecoration = "line-through" : null;
             
         })
+
+        // deleteButton.addEventListener("click",function({
+
+        // }))
     
 
         //if there is an image attached
@@ -37,9 +55,11 @@ function displayTodo(todos){
         images.style.height = "100px";
 
         parentDiv.appendChild(titleH3);
-
+        
+        //if there is a description
         todo.description ? titleH3.appendChild(description) : null; 
 
+        //if there is a price
         todo.price ? titleH3.appendChild(price) : null;
 
         titleH3.appendChild(images);
@@ -54,6 +74,7 @@ function displayTodo(todos){
         
         
     })
+    
 }
 
 let input = document.taskinput;
@@ -65,8 +86,6 @@ input.addEventListener("submit",function(e){
     let price = taskinput.price.value;
     let description = taskinput.description.value;
     let imgUrl = taskinput.img.value;
-
-    console.log(title);
 
     const newObject = {
         title,

@@ -1,0 +1,34 @@
+*{
+    font-family: 'Julius Sans One', sans-serif;
+}
+.row.content{
+    height: 450px;
+}
+#centerLogo{
+    position: relative;
+    margin-top: 30pt;
+}
+#logoSize{
+    font-size: 40pt;
+}
+#head{
+    background-image: url("https://img.purch.com/w/660/aHR0cDovL3d3dy5saXZlc2NpZW5jZS5jb20vaW1hZ2VzL2kvMDAwLzAwMi81MDUvb3JpZ2luYWwvMDgwOTAyLXplbi1tZWRpdGF0aW9uLTAyLmpwZw==");
+    background-size: cover;
+    font-family: 'Julius Sans One', sans-serif;
+    color:white;
+}
+#opacityHeader{
+    background: rgba(0, 0, 0, 0.2);
+      
+}
+#yoga{
+    height:100pt;
+}
+#logo{
+    display:inline-flex;
+}
+footer {
+    background-color: #555;
+    color: white;
+    padding: 15px;
+}
