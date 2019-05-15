@@ -16,8 +16,8 @@ function displayTodo(todos){
         //label for checkbox
         let label = document.createElement("label"); 
 
-        //label for delete
-        let deleteButton = document.createElement("label");
+        //delete button
+        let deleteButton = document.createElement("button");
 
         //set values equal to todo.info from api
         titleH3.innerText = todo.title;
@@ -28,26 +28,24 @@ function displayTodo(todos){
         checkbox.setAttribute("type","checkbox");
 
         //delete button
-        deleteButton.setAttribute("type","button");
+       // deleteButton.setAttribute("type","button");
+        deleteButton.innerText="Delete";
 
         checkbox.addEventListener("click", function(){
             axios.put(`https://api.vschool.io/patriceblocker/todo/${todo._id}`, {completed: !todo.completed}).then(
                 (response) => {
                     const updatedTodos = todoList.map(oldTodo => oldTodo._id === todo._id ? oldTodo = response.data : oldTodo); 
                     displayTodo(updatedTodos);
-                    titleH3.style.textDecoration = "line-though";   
-                    window.location.reload();
-                
+                    window.location.reload();         
                 });
 
-            titleH3.style.textDecoration = "line-though";   
-            todo.completed ? titleH3.style.textDecoration = "line-through" : null;
-            
+            titleH3.style.textDecoration = "line-though";  
         })
 
-        // deleteButton.addEventListener("click",function({
-
-        // }))
+        deleteButton.addEventListener("click",function(){
+            parentDiv.style.display = "none";
+            axios.delete(`https://api.vschool.io/patriceblocker/todo/${todo._id}`);
+        })
     
 
         //if there is an image attached
@@ -67,12 +65,11 @@ function displayTodo(todos){
         label.appendChild(document.createTextNode("Is this task completed?"));
         parentDiv.appendChild(label);
         parentDiv.appendChild(checkbox);
+        parentDiv.appendChild(deleteButton);
 
         document.getElementById("divContainer").appendChild(parentDiv); 
         todo.completed ? titleH3.style.textDecoration = "line-through" : null;
-        
-        
-        
+    
     })
     
 }
@@ -103,6 +100,7 @@ function postNewTodo(newTodo){
         displayTodo([response.data]);
     })
 }
+
 
 
 

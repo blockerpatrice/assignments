@@ -1,31 +1,106 @@
-*{
-    font-family: 'Julius Sans One', sans-serif;
+header .container {
+    height: 400pt;
+}
+#overlayOne{
+    background-image: url("http://www.csszengarden.com/214/contours.png");
+    width: 100%;
+    height: 100%;
+}
+#overlayTwo{
+    background-image: url("http://www.csszengarden.com/214/gridlines.png");
+    width:100%;
+    height:100%;
+}
+#test1{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 20px;
+    background-color: grey;
+    opacity: 0.3;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    z-index:1;
+    display:inline-block;
+}
+#road{
+    height:200pt;
+    font-family:'Libre Baskerville', serif;
+}
+#roadText{
+    font-family:'Libre Baskerville', serif;
+    padding:50pt;
+    
 }
 .row.content{
     height: 450px;
 }
 #centerLogo{
-    position: relative;
-    margin-top: 30pt;
+   
 }
+#logoContainer{
+
+}
+#viewDesigns{
+    opacity: 0.3;
+    background-color: lightgray;
+    z-index: 2;
+}
+#viewText{
+    position:relative;
+    text-decoration: beige;
+    z-index:4;
+    padding-top:10pt;
+}
+
+.logoContainer{
+    display:grid;
+    grid-template-areas:
+    'logo title title title'
+    'logo title title title'
+    'logo smalltitle smalltitle';
+    grid-gap: 1px;
+    background-color: #2196F3;
+    padding:10px;
+}
+
+.logoContainer > div{
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 40px;
+    font-size: 30px;
+}
+.logo {grid-area: logo;}
+.titleL {grid-area: title;}
+.smallTitle {grid-area: smalltitle;}
+
 #logoSize{
-    font-size: 40pt;
+    font-size: 30pt;
+    font-family: 'Julius Sans One', sans-serif; 
 }
 #head{
-    background-image: url("https://img.purch.com/w/660/aHR0cDovL3d3dy5saXZlc2NpZW5jZS5jb20vaW1hZ2VzL2kvMDAwLzAwMi81MDUvb3JpZ2luYWwvMDgwOTAyLXplbi1tZWRpdGF0aW9uLTAyLmpwZw==");
+    background-image: url("http://www.csszengarden.com/214/huntington.jpg");
     background-size: cover;
     font-family: 'Julius Sans One', sans-serif;
     color:white;
+    height: 230pt;
+    z-index: -1;
+}
+#smallerHeader{
+    font-style: italic;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 10pt;
 }
 #opacityHeader{
-    background: rgba(0, 0, 0, 0.2);
-      
+    background: rgba(0, 0, 0, 0.1); 
+    z-index: 4;  
 }
 #yoga{
     height:100pt;
 }
+
 #logo{
-    display:inline-flex;
+    margin-top:50pt;
 }
 footer {
     background-color: #555;
