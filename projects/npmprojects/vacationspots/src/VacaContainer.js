@@ -1,6 +1,7 @@
-import react from 'react';
+import React from 'react';
+import Vacations from './Vacations.js'
 
-const vacaContainer = () => {
+const VacaContainer = () => {
     let vacationSpots = [
         {
           place: "Meridian, Idaho",
@@ -25,14 +26,15 @@ const vacaContainer = () => {
         }
       ]
     
+    const mappedInfo = vacationSpots.map((spots) => {
+      return <Vacations place = {spots} />;
+    })
+    
     return (
-        <div>
-            {vacationSpots.map(spots => 
-                <div>
-                    <h1>spots.place</h1>
-                </div>
-            )}
-        </div>
-
+      <div>
+          {mappedInfo};
+      </div>
     )
 }
+
+export default VacaContainer;
