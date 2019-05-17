@@ -38,3 +38,41 @@ const VacaContainer = () => {
 }
 
 export default VacaContainer;
+
+
+import React from 'react';
+
+class Person extends React.Component{
+  constructor(){
+    super();
+
+    this.state = {
+      name: "Patrice",
+      occupation: "Developer",
+      favColor: "blue"
+    }
+
+    this.updateState = this.updateState.bind(this);
+  }
+
+  updateColor(){
+    this.setState({favColor:'name updated'});
+  }
+  updateOccupation(){
+    this.setState({occupation:'occupation updated'})
+  }
+   
+
+  render(){
+    return (
+      <div>
+        <h1>{this.state}</h1>
+        <button onClick = {this.updateState}> Updates color & Occupation</button>
+        <h2>{this.state.occupation}</h2>
+        <h2>{this.state.favColor}></h2>
+      </div>
+    )
+  }
+}
+
+export default Person;

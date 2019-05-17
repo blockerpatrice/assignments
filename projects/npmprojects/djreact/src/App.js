@@ -1,15 +1,12 @@
 import React from 'react';
 import './App.css';
-import VacaContainer from './VacaContainer';
 
-const App = () => {
+function App() {
   return (
     <div>
-      <VacaContainer/>
+      <Djreact/>
     </div>
-  )
+  );
 }
 
 export default App;
-
-
