@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Square= (props) =>{
+const Square=(props) =>{
     console.log(props);
     return (
           <div style={{background: props.color}}>

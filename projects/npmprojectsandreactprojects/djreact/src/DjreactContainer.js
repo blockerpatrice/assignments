@@ -1,5 +1,6 @@
 import React from 'react';
 import Square from './Square.js'
+import Sound from './Djsound.js'
 
 class DjreactContainer extends React.Component {
     constructor() {
@@ -14,11 +15,11 @@ class DjreactContainer extends React.Component {
         //changes all boxes to either black or white
 
         this.setState(() =>{
-            if(this.state.colors[0] == "white"){
+            if(this.state.colors[0] === "white" || this.state.colors[0] === "purple"){
                 return{
                     colors:["black","black","black","black"]
                 }
-            }else if (this.state.colors[0] == "black"){
+            }else if (this.state.colors[0] === "black"){
                 return{
                     colors:["white","white","white","white"]
                 }
@@ -28,12 +29,34 @@ class DjreactContainer extends React.Component {
     }
 
     buttonTwo = () => {
-
         this.setState(()=> {
-            return(
-                
-            )
+            return{
+                colors:["purple", "purple", this.state.colors, this.state.colors]
+            }
         })
+    }
+
+    buttonThree = () => {
+        this.setState(() => {
+            return{
+                colors:[this.state.colors,this.state.colors,"blue",this.state.colors]
+            }
+        })
+    }
+
+    buttonFour= () => {
+        this.setState(() => {
+            return{
+                colors:[this.state.colors,this.state.colors,this.state.colors,"blue"]
+            }
+        })
+    }
+
+    buttonFive = (e) => {
+
+        e.preventDefault();
+        console.log('The link was clicked.');
+          
     }
 
     render() {
@@ -48,11 +71,10 @@ class DjreactContainer extends React.Component {
                 <div className="buttons">
                     <button onClick={this.buttonOne}>Turn all black or white</button>
                     <button onClick={this.buttonTwo}>Turn top half purple</button>
-                    <button>Turn bottom left blue</button>
-                    <button>Turn bottom right blue</button>
+                    <button onClick={this.buttonThree}>Turn bottom left blue</button>
+                    <button onClick={this.buttonFour}>Turn bottom right blue</button>
                 </div>
-                <div class="buttons">
-                    <button></button>
+                <div className="buttons">
                     <button></button>
                     <button></button>
                     <button></button>
