@@ -1,6 +1,6 @@
 import React from 'react';
-import Square from './Square.js'
-import Sound from './Djsound.js'
+import Square from './Square.js';
+import Djsound from './Djsound.js';
 
 class DjreactContainer extends React.Component {
     constructor() {
@@ -39,7 +39,7 @@ class DjreactContainer extends React.Component {
     buttonThree = () => {
         this.setState(() => {
             return{
-                colors:[this.state.colors,this.state.colors,"blue",this.state.colors]
+                colors:[this.state.colors[0],this.state.colors[1],"blue",this.state.colors[3]]
             }
         })
     }
@@ -47,16 +47,14 @@ class DjreactContainer extends React.Component {
     buttonFour= () => {
         this.setState(() => {
             return{
-                colors:[this.state.colors,this.state.colors,this.state.colors,"blue"]
+                colors:[this.state.colors[0],this.state.colors[1],this.state.colors[2],"blue"]
             }
         })
     }
 
     buttonFive = (e) => {
-
-        e.preventDefault();
-        console.log('The link was clicked.');
-          
+        
+            
     }
 
     render() {
@@ -74,11 +72,11 @@ class DjreactContainer extends React.Component {
                     <button onClick={this.buttonThree}>Turn bottom left blue</button>
                     <button onClick={this.buttonFour}>Turn bottom right blue</button>
                 </div>
-                <div className="buttons">
+                {/* <div className="buttons">
+                    <button onClick={this.buttonFive}>Play Sound</button>
                     <button></button>
                     <button></button>
-                    <button></button>
-                </div>
+                </div> */}
             </div>   
     
         )

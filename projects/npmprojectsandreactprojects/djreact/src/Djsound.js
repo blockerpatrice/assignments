@@ -1,9 +1,12 @@
 import React from 'react';
 import Sound from 'react-sound';
+
  
 class Djsound extends React.Component{
     render() {
         return (
+
+         
           <Sound
             url="https://soundcloud.com/urlmusic/stonebank-feat-emel-belgica-2019-now-were-free"
             playStatus={Sound.status.PLAYING}
@@ -12,6 +15,8 @@ class Djsound extends React.Component{
             onPlaying={this.handleSongPlaying}
             onFinishedPlaying={this.handleSongFinishedPlaying}
           />
+
+
         );
       }
 }
