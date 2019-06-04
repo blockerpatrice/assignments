@@ -1,31 +1,28 @@
-import React, { Component } from 'react';
-import { Map, GoogleApiWrapper } from 'google-maps-react';
 import Geosuggest from 'react-geosuggest';
+import React from 'react';
+import {data} from './Provider';
 
 
-export class Geo extends Component {
-    
 
-  render() {
-    return (
-        <div>
-            <Geosuggest 
-                placeholder="Input place of birth" 
-                autoComplete="true"
-                onSuggestSelect={this.onSuggestSelect}
-            />
-            
-        </div>
-    );
-  }
+class Geo extends React.Component{
 
-  onSuggestSelect(suggest){
-    console.log(suggest);
+    render() {
+        return (
+            <div>
+                <Geosuggest 
+                    placeholder="Input place of birth" 
+                    autoComplete="true"
+                    onSuggestSelect={this.onSuggestSelect}
+                />
+            </div>
+
+        );
+      }
+      
+    onSuggestSelect = (suggest) => {
+        this.props.saveLong(Math.trunc(suggest.location.lng));
+        this.props.saveLat(Math.trunc(suggest.location.lat)); 
+    }
 }
-  
-}
 
-
-export default GoogleApiWrapper({
-  apiKey: 'AIzaSyA_KD2KYN4r2TCgsp4O_n1lR7Fv9jQAzVU'
-})(Geo);
+export default data(Geo);

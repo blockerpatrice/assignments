@@ -47,6 +47,21 @@
 	padding: 30px;
 	background: #F7F7F7;
 }
+
+.submit-button{
+	font: 95% Arial, Helvetica, sans-serif;
+	max-width: 150px;
+	margin: 10px auto;
+	padding: 30px;
+	background:#3d80f7;
+	text-align: center;
+	border-radius: 10pt;
+}
+.Link{
+	color:white;
+	text-decoration: none;
+	
+}
 .form-style h1{
 	background: #F7F7F7;;
 	padding: 20px 0;
@@ -57,11 +72,7 @@
 	margin: -16px -16px 16px -16px;
 }
 .form-style input[type="text"],
-.form-style input[type="date"],
-.form-style input[type="datetime"],
-.form-style input[type="email"],
 .form-style input[type="number"],
-.form-style input[type="time"],
 .form-style textarea,
 .form-style select 
 {
@@ -82,11 +93,7 @@
 	font: 95% Arial, Helvetica, sans-serif;
 }
 .form-style input[type="text"]:focus,
-.form-style input[type="date"]:focus,
-.form-style input[type="datetime"]:focus,
-.form-style input[type="email"]:focus,
 .form-style input[type="number"]:focus,
-.form-style input[type="time"]:focus,
 .form-style textarea:focus,
 .form-style select:focus
 {
@@ -114,54 +121,23 @@
 /*Dropdown for timezone choice*/
 .dropdown {
 	position: relative;
-	
 }
-ul {
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-	top:45px;
-	right:0px;
-	width:100%;
-	background-color: white;
-	font-weight:bold;
-	position: absolute;
-	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-	z-index: 1;
-	max-height: 150px;
-	overflow:auto;
+
+.summary{
+	font-size:20pt;
+	padding-top:20pt;
 }
-li a {
-	color: #000;
-	text-decoration: none;
+.results-page{
+	font: 95% Arial, Helvetica, sans-serif;
+	max-width: 600px;
+	margin: 10px auto;
+	padding: 30px;
+	background: #F7F7F7;
+	text-align: center;
 }
-li {
-	padding: 8px 16px;
-	border-bottom: 1px solid #e5e5e5;
-}
-li:last-child {
-	border-bottom: none;
-}
-li:hover {
-	background-color: #e5e5e5;
-	color: white;
-}
-.button{
-	height:18px;
-	background-color:#3d80f7;
-	padding:12px;
-	border-radius:3px;
-	color:white;
-	
-}
-.button:before{
-	content:"";
-	position:absolute;
-	width:0px;
-	height:0px;
-	border: 10px solid;
-	font-weight:bold;
-	border-color: white transparent transparent transparent;
-	right:6px;
-	top:18px;
+
+.title{
+	font-size:20pt;
+	padding:30pt;
+	color:black;
 }

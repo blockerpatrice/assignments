@@ -2,14 +2,14 @@ var sdkClient = require('./Sdk');
 
 // make some dummy data in order to call vedic rishi api
 var data = {
-    'date': 10,
-    'month': 12,
-    'year': 1993,
-    'hour': 1,
-    'minute': 25,
-    'latitude': 27,
-    'longitude': -82,
-    'timezone': -10
+    'date': 29,
+    'month': 1,
+    'year': 1994,
+    'hour': 19,
+    'minute': 17,
+    'latitude': -82,
+    'longitude': 27,
+    'timezone': -5
 };
 
 // api name which is to be called
@@ -27,6 +27,6 @@ sdkClient.call(resource, data.date, data.month, data.year, data.hour, data.minut
     else
     {
         console.log('Response has arrived from API server --');
-        console.log(result);
+        console.log(result.ascendant);
     }
 });

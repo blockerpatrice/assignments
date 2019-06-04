@@ -6,9 +6,11 @@ var userID =  "604379";
 var apiKey = "aba270419c55c2f4cc7bc258abcd8a21";
 
 
+
 var getResponse = (resource, data, callback) => {
 	var url = baseUrl + resource;
 	var auth = "Basic " + new Buffer(userID + ":" + apiKey).toString('base64');
+	
 	request(
 		{
 			url: url,
@@ -21,7 +23,8 @@ var getResponse = (resource, data, callback) => {
 		function(err, res, body) {
 			if(!err) {
 				if(typeof callback === 'function') {
-					return callback(null, body);
+					return callback(null, JSON.parse(body));
+					
 				}
 			}
 			if(typeof callback === 'function') {
@@ -96,11 +99,6 @@ var api = {
 		var data = packageNumeroData(date, month, year, name);
 		return getResponse(resource, data, callback);
 	},
-
-	// matchMakingCall: (resource, maleBirthData, femaleBirthData, callback)=> {
-	// 	var data = packageMatchMakingData(maleBirthData, femaleBirthData);
-	// 	return getResponse(resource, data, callback);
-	// }
 
 }
 
