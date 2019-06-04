@@ -1,4 +1,4 @@
-###V School Projects and Assignments
+V School Projects and Assignments
 
 These are the projects assigned by V School in Salt Lake City Utah. V School is a coding bootcamp that teaches the MERN stack. Throughout the course of the bootcamp we learn:
 
