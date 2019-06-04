@@ -34,7 +34,6 @@ class Form extends React.Component{
         value = e.target.value
         
         this.setState({[name]: value})
-        
       
         this.props.saveDate(this.state.date);
         this.props.saveMonth(this.state.month);
