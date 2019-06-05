@@ -12,12 +12,14 @@ class WheelComponent extends React.Component{
         }
     }
 
-    componentWillMount(){
+    componentDidMount(){
         let setter = this;
         
         let string = this.props.monthString + " " + this.props.date + " " + this.props.year + " " + this.props.hour + ":" + this.props.minute;
         
         let date = encodeURIComponent(string);
+
+        console.log(string);
 
         let path = "http://planetwatcher.com/chartwheel.php?date=" + date + "&size=" + 500 + "&asc=" + 0 + "&name=" + this.props.name;
         let image = "<img src=" + path + ">";

@@ -47,7 +47,7 @@ class Dropdown extends React.Component {
 
 
     render() {
-    const { timezone } = this.state;
+    //const { timezone } = this.state;
         return (
             <div>
                 <Select options={timeZoneArry} onChange={this.handleChange} />

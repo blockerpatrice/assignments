@@ -17,6 +17,7 @@ class Provider extends React.Component{
             longitude:'',
             timezone:'',
             test:'',
+            ascendant:'',
 
         }
     }
@@ -78,6 +79,9 @@ class Provider extends React.Component{
     saveTimezone = newValue => {
         this.setState({timezone:newValue});
     }
+    saveAscen = newValue => {
+        this.setState({ascendant:newValue})
+    }
 
 
     
@@ -96,6 +100,7 @@ class Provider extends React.Component{
                     saveLat:this.saveLat,
                     saveLong:this.saveLong,
                     saveTimezone:this.saveTimezone,
+                    saveAscen:this.saveAscen
                    
                 }}>
                 

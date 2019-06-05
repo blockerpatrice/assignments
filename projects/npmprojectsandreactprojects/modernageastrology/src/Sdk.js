@@ -1,5 +1,5 @@
 var request = require('request');
-var http = require('http');
+//var http = require('http');
 
 var baseUrl = "https://json.astrologyapi.com/v1/";
 var userID =  "604379";
