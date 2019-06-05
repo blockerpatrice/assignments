@@ -7,7 +7,6 @@ FunctionSubmit=(props)=>{
             <Link to="/chart">Submit</Link>
         </div>
     )
-    
 }
 
 export default FunctionSubmit;
