@@ -1,41 +1,63 @@
 const express = require("express");
 const app = express();
-const data = require('./database');
+const data = require("./database");
+const uuid = require("uuid/v4");
+const PORT = 2988;
 
-// GETs a list of all bounties
-// POSTs new bounties,
-// DELETEs a bounty
-// PUTs (updates) a bounty
 
-app.get('/bounty', (req, res) => {
-    res.send(data);
+app.use(express.json())
+
+app.get('/bounty', (request, response) => {
+    console.log(request.query)
+    //first argument is the endpoint url
+
+    // if(request.query.type && request.query.lname){
+    //     const typeResults = data.filter(typeOfThing => typeOfThing.type === request.query.type)
+    //     results = typeResults.filter(name =>name.lname === request.query.lname)
+    // }else if(request.query.type){
+    //     const results = data.filter(bounty => bounty.type === request.query.type)
+    // }
+    response.send(data);
 });
 
-app.post('/bounty', (request, response)=>{
-    const newBounty = request.body;
-    data.push(newBounty);
-    response.send({newBounty}); //whatever you want to get back. Can 
-});
+// app.get('/bounty/:bountyID', (request, response) => {
+//     console.log(request.params.bountyID)
+//     const results = data.filter(bounty => bounty._id === request.params.bountyID)
+//     response.send(results)
+// });
 
-app.delete('/bounty/:bountyID', (request, response) =>{
-    console.log(request.params);
-    const results = data.filter(bountyID => bounty._id !== request.params.bountyID)
-    response.send(results);
-});
+// app.post('/bounty', (request, response)=>{
+// //post is sending over a new object of data
+//     const newBounty = request.body;
+//     newBounty._id = uuid();
+//     data.push(newBounty);
+//     response.send({newBounty}); //whatever you want to get back. Can 
+// });
 
-app.put('/bounty/:bountyID',(request, response)=>{
-   const updatedbounty = data.filter(bounty => bounty._id === request.params.bounty);
+// app.delete('/bounty/:bountyID', (request, response)=> {
+//    data.forEach((bounty, i) => {
+//        if(request.params.bountyID === bounty._id){
+//            data.splice(i, 1)
+//        }
+//    })
+//    response.send({
+//        msg: 'Successfully Deleted Bounty!'
+//    })
+// });
 
-   data.map(bounty =>{
-       if(request.params.bountyID === bounty._id){
-         Object.assign(bounty, updatedbounty);
-       }else{ 
-           return bounty 
-       }
-   })
-   response.send({msg:'updated info', data})
-});
+// app.put('/bounty/:bountyID', (request, response) => {
+//     const updatedbounty = request.body;
+//     data.forEach(bounty => {
+//         if(request.params.bountyID === bounty._id){
+//             return Object.assign(bounty, updatedbounty)
+//         }
+//     })  
+//     response.send({
+//         msg: 'Successfully Updated bounty',
+//         data
+//     })
+// });
 
-app.listen(1983, () => {
-    console.log("App is listening on port 3000!");
+app.listen(PORT, () => {
+    console.log("App is listening on port 4444");
 });
