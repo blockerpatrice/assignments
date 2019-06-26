@@ -1,11 +1,8 @@
-function missing(arr){
-    arr.sort();
-    for(let i = 0; i<arr.length; i++){
-		if(arr[i]){
-			console.log(arr[i]++);
-		}
-	}
+const arr = [10, 11, 12, 9, 10];
+
+progressDays = (runs) => {
+	let ansr = runs.filter((currentValue, index, array) => currentValue < array[index+1]).length;
+	console.log(ansr)
 }
 
-newArry = [3,2,8,4,5,6,9];
-missing(newArry);
+//progressDays(arr);

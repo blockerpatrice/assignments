@@ -8,7 +8,8 @@ const mongoose = require('mongoose');
 //middleware are methods used in between requests and responses
 //express router is to have cleaner code. Like components in React, express router 
 //is to organize
-app.use(express.json())
+app.use(express.json());
+
 app.use("/bounty", require("./destinationRoute"));
 
 
@@ -18,7 +19,7 @@ mongoose.connect('mongodb://localhost:27017/bounty-hunter',{useNewUrlParser: tru
 
 
 app.listen(PORT, () => {
-    console.log('server is running on port ' + 2900)
+    console.log('server is running on port ' + 2903)
 });
 
 

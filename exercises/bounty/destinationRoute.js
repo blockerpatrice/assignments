@@ -6,11 +6,6 @@ const Destination = require("./models/Destination");
 
 destinationRouter.route("/")
 
-    // .get((request, response)=> {
-    //     console.log(response.query)
-    //     response.send(data);
-    // })
-
     .post((request, response)=> {
         const newbounty = new Destination(request.body);
         newbounty.save((err,new_destination) =>{
@@ -28,12 +23,7 @@ destinationRouter.route("/")
                 return response.status(500).send(err)
             }return response.status(200).send(destination)
         })
-        // if (request.query.timeToGo && request.query.price){
-        //     console.log(typeof request.query.price)
-        //     const timeToGoResults = data.filter(bounty => bounty.timeToGo === request.query.timeToGo)
-        //     const final = timeToGoResults.filter(bounty => bounty.price == request.query.price)
-        //     response.send(final)
-        // } 
+  
     })
 
 
