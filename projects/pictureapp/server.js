@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const PORT = 2071;
+const PORT = 2080;
 require("dotenv").config();
 const mongoose = require("mongoose");
 const expressJwt = require("express-jwt");
@@ -24,9 +24,9 @@ app.use((err, req, res, next) => {
  });
  
  app.use("/auth", require("./routes/auth"));
- app.use("/todo", require("./routes/todo.js"));
+ //app.use("/todo", require("./routes/todo.js"));
  app.use("/api", expressJwt({secret: process.env.SECRET}));
- app.use("/api/todo", require("./routes/todo.js"));
+ //app.use("/api/todo", require("./routes/todo.js"));
  
  
  app.listen(PORT, () => {
