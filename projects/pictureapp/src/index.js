@@ -6,7 +6,6 @@ import { BrowserRouter } from "react-router-dom";
 import Provider from "./GlobalProvider";
 
 
-
 ReactDOM.render(
     <BrowserRouter>
         <Provider>

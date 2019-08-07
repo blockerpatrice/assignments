@@ -3,8 +3,10 @@ import { Route, Switch } from "react-router-dom";
 import MyNavbar from "./navbar/MyNavbar.js";
 import Home from "./homepage/Home.js";
 import Signup from "./signup/Signup.js";
-import SearchPage from "./searchpage/SearchPage.js";
+import SearchPage from "./search/SearchPage.js";
 import Login from "./login/Login.js";
+
+
 
 
 function App () {
@@ -16,6 +18,7 @@ function App () {
                 <Route path="/signup" component={Signup}/>
                 <Route path="/search" component={SearchPage} />
                 <Route path="/login" component={Login} />
+             
             </Switch>
         </div>
     )

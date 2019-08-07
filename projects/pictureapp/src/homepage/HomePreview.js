@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './Home.css';
 import {withProvider} from '../GlobalProvider.js'
 import ImgList from '../unsplashcomponents/ImgList.js'
-import {Link} from 'react-router-dom';
 
 class HomePreview extends Component{
     constructor() {

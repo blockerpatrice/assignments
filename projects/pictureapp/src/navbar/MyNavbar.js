@@ -1,31 +1,56 @@
-import React from "react";
+import React, {Component} from "react";
 import { Link } from "react-router-dom";
 import { withProvider } from "../GlobalProvider.js";
 import "./MyNavbar.css";
 import "../App.css"
 
 
-function MyNavbar (props){
-        return (
+class MyNavbar extends Component {
+
+    handleLogout = (event) => {
+        event.preventDefault();
+        this.props.logout();
+        alert("You've logged out");
+    }
+    
+    render() {
+    return (
             
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a className="navbar-brand" href="#">Picture App</a>
-                <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul className="navbar-nav mr-auto">
-                        <li className="nav-item active">
-                            <Link to="/" className="nav-link">Home</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link to="/signup" className="nav-link">SignUp</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link to="/login" className="nav-link">Login</Link>
-                        </li>
-                    </ul>
-                </div>
+            {
+                !this.props.token ?
+                    <React.Fragment>
+                        <div>
+                            <Link to="/" className="logo">Picture App</Link>
+                        </div>
+                        <div>
+                            <Link to="/signup" className="nav-link">Sign Up</Link>
+                        </div>
+
+                        <div>
+                            <Link to="/login" className="nav-link">Log In</Link>
+                        </div>
+
+                    </React.Fragment>
+                :
+                    <React.Fragment>
+                        <div className="welcome">
+                           Welcome {this.props.user.username}
+                        </div>
+
+                        <div>
+                            <Link to="/saved" className="nav-link">Saved Images</Link>
+                        </div>
+                
+                        <div>
+                            <button className="logout-button" onClick={this.handleLogout}>Logout</button>
+                        </div>
+                    </React.Fragment>
+            }
             </nav>
          
-    );
+    )
+        }
  
 }
 

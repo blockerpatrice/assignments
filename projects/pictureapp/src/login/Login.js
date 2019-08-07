@@ -31,7 +31,6 @@ class Login extends Component {
 
     handleSubmit = event => {
         event.preventDefault();
-        console.log(this.state.username);
         this.props.login(this.state)
             .then(() => this.props.history.push("/"));
             
@@ -43,11 +42,11 @@ class Login extends Component {
                 <div className="text"> Login </div>
                 <form onSubmit={this.handleSubmit} className="form-submit">
                    
-                        <input value={this.state.username} name="username" type="text" placeholder="Enter Username" autoComplete="off" className="form-control" onChange={this.updateUser}/>     
+                    <input value={this.state.username} name="username" type="text" placeholder="Enter Username" autoComplete="off" className="form-control" onChange={this.updateUser}/>     
                      
-                        <input type="text" onChange={this.updatePass} value={this.state.password} autoComplete="off" className="form-control" placeholder="Enter Password"/>
+                    <input type="password" onChange={this.updatePass} value={this.state.password} autoComplete="off" className="form-control" placeholder="Enter Password"/>
                     
-                        <button type="submit" className="button-submit">Submit</button>
+                    <button type="submit" className="button-submit">Submit</button>
                 </form>
            </div> 
 

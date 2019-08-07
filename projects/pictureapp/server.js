@@ -24,9 +24,8 @@ app.use((err, req, res, next) => {
  });
  
  app.use("/auth", require("./routes/auth"));
- //app.use("/todo", require("./routes/todo.js"));
  app.use("/api", expressJwt({secret: process.env.SECRET}));
- //app.use("/api/todo", require("./routes/todo.js"));
+
  
  
  app.listen(PORT, () => {

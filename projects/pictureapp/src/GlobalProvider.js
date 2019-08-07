@@ -7,7 +7,7 @@ class GlobalProvider extends Component {
     constructor() {
         super()
         this.state = {
-            conversations: [],
+            imgs: [],
             searchword: '',
             user: JSON.parse(localStorage.getItem("user")) || {},
             token: localStorage.getItem("token") || ""
@@ -54,6 +54,15 @@ class GlobalProvider extends Component {
             })
     }
 
+    saveImg = imginfo => {
+        return axios.post("/auth/loggedin", imginfo)
+            .then(response => {
+                this.setState({
+                    imgs : imginfo
+                });
+                return response;
+            })
+    }
     
     logout = () => {
         localStorage.removeItem("user");
@@ -78,6 +87,7 @@ class GlobalProvider extends Component {
                     signup: this.signup,
                     login: this.login, 
                     logout: this.logout,
+                    saveImg: this.saveImg,
                     setSearchWordProp:this.setSearchWordProp
                 }}
             >

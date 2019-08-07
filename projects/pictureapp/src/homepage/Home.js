@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Home.css';
-import SearchBar from '../searchbar/SearchBar.js';
+import HomeSearchBar from '../search/HomeSearchBar.js';
 import HomePreview from '../homepage/HomePreview.js'
 
 class Home extends Component {
@@ -9,10 +9,10 @@ class Home extends Component {
         return ( 
             <div className="home">
                 <div className="pencils">
-                    <SearchBar/>
+                    <HomeSearchBar/>
                 </div>
                 <div className="spacing"></div>
-                <HomePreview/>
+                    <HomePreview/>
             </div>
         );
     }
